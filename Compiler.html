@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compiler</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    #code-input {
+      width: 100%;
+      height: 200px;
+    }
+    
+    #output {
+      width: 100%;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow: auto;
+    }
+    
+    #compile-btn {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Service.html">Services</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>LPL Mastery</h1>
+        <p>Your Ultimate Resource for Java Programming</p>
+    </header>
+    <main>
+
+        <div class="sidebar">
+            <ul>
+              <li><a href="tutorial.html">Tutorial</a></li>
+              <li><a href="Compiler.html">Compiler</a></li>
+              <li><a href="methods.html">Methods</a></li>
+              <li><a href="classes.html">Classes</a></li>
+              <li><a href="file_handling.html">File Handling</a></li>
+              <li><a href="how_to.html">How To</a></li>
+              <li><a href="reference.html">Reference</a></li>
+              <li><a href="Quiz.html">Quiz</a></li>
+            </ul>
+          </div>
+  <textarea id="code-input" placeholder="Enter your code here"></textarea>
+  <button id="compile-btn">Compile</button>
+  <pre id="output"></pre>
+
+  <script>
+    // Get references to the HTML elements
+    const codeInput = document.getElementById('code-input');
+    const compileBtn = document.getElementById('compile-btn');
+    const output = document.getElementById('output');
+    
+    // Add event listener to the compile button
+    compileBtn.addEventListener('click', () => {
+      const code = codeInput.value; // Get the code from the input area
+      
+      // TODO: Implement your compilation logic here
+      
+      // For this example, we simply display the code in the output area
+      output.textContent = code;
+    });
+  </script>
+  </main>
+  <footer>
+    <div class="footer-left">
+        <p>&copy; 2023 LPL Mastery. All rights reserved.</p>
+      </div>
+  </footer>
+</body>
+</html>

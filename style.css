@@ -31,31 +31,31 @@ body {
     padding: 0;
   }
 
-  .sidebar {
+  .top {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
   }
 
-  .sidebar ul {
+  .top ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     
   }
   
-  .sidebar li {
+  .top li {
     display: inline-block;
     margin-right: 10px;
   }
 
-  .sidebar a {
+  .top a {
     color: #fff;
     text-decoration: none;
   }
   
-  .sidebar a:hover {
+  .top a:hover {
     text-decoration: underline;
   }
 

@@ -21,16 +21,109 @@
         <main>
             <div class="top">
                 <ul>
-                  <li><a href="Tutorial.html">Tutorial</a></li>
+                  <li><a href="tutorial.html">Tutorial</a></li>
                   <li><a href="Compiler.html">Compiler</a></li>
-                  <li><a href="Methods.html">Methods</a></li>
-                  <li><a href="Classes.html">Classes</a></li>
-                  <li><a href="File_Handling.html">File Handling</a></li>
-                  <li><a href="How_To.html">How To</a></li>
-                  <li><a href="Reference.html">Reference</a></li>
+                  <li><a href="methods.html">Methods</a></li>
+                  <li><a href="classes.html">Classes</a></li>
+                  <li><a href="file_handling.html">File Handling</a></li>
+                  <li><a href="how_to.html">How To</a></li>
+                  <li><a href="reference.html">Reference</a></li>
                   <li><a href="Quiz.html">Quiz</a></li>
                 </ul>
+              </div><br><br>
+              <div class="sidebar">
+                <ul>
+                  <li><a href="#java-intro">Java Intro</a></li>
+                  <li><a href="#java-install">Java Install</a></li>
+                  <li><a href="#lets-start">Let's Start</a></li>
+                  <li><a href="#java-syntax">Java Syntax</a></li>
+                </ul>
               </div>
+            <div class="content">
+              <h1 id="java-intro">Java Introduction</h1>
+              <h2>What is Java</h2><br><br><br>
+              <p>Java is a widely used object-oriented programming language and software platform that runs on billions of devices, including notebook computers, mobile devices, gaming consoles, medical devices and many others. The rules and syntax of Java are based on the C and C++ languages.</p><br>
+              <p>One major advantage of developing software with Java is its portability. Once you have written code for a Java program on a notebook computer, it is very easy to move the code to a mobile device. When the language was invented in 1991 by James Gosling of Sun Microsystems (later acquired by Oracle), the primary goal was to be able to "write once, run anywhere."</p><br>
+              <p>It's also important to understand that Java is much different from JavaScript. Javascript does not need to be compiled, while Java code does need to be compiled. Also, Javascript only runs on web browsers while Java can be run anywhere.</p>
+              <p>New and improved software development tools are coming to market at a remarkable pace, displacing incumbent products once thought to be indispensable. In light of this continual turnover, Java’s longevity is impressive; more than two decades after its creation, Java is still the most popular language for application software development—developers continue to choose it over languages such as Python, Ruby, PHP, Swift, C++, and others. As a result, Java remains an important requirement for competing in the job market.</p><br>
+              <p>It is used for:</p><br>
+              <ul>
+                <li>Mobile applications</li>
+                <li>Desktop applications</li>
+                <li>Web applications</li>
+                <li>Web servers and application servers</li>
+                <li>Games</li>
+                <li>Database connection</li>
+                <li>And much, much more!</li>
+              </ul><br>
+              <h2>Why Used Java?</h2><br>
+              <ul>
+                <li>Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)</li>
+                <li>It is one of the most popular programming language in the world</li>
+                <li>It has a large demand in the current job market</li>
+                <li>It is easy to learn and simple to use</li>
+                <li>It is open-source and free</li>
+                <li>It is secure, fast and powerful</li>
+                <li>It has a huge community support (tens of millions of developers)</li>
+                <li>Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs</li>
+                <li>As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa</li>
+              </ul><br>
+              <h2 id="java-install">Java Install</h2><br>
+              <p>Install Java in your PC.Some PCs might have Java already installed.</p><br>
+              <p>To check if you have Java installed on a Windows PC, search in the start bar for Java or type the following in Command Prompt (cmd.exe):</p><br>
+              <img src="cmd1.png"><br><br><br>
+              <p>If Java is installed, you will see something like this (it's depend on your java version):</p><br>
+              <img src="cmd2.png"><br><br><br>
+              <p>If you do not have Java installed on your computer, you can download it for free at oracle.com.</p>
+              <h2>Setup for Windows</h2><br>
+              <p>To install Java on Windows:</p><br>
+              <ol>
+                <li>Go to "System Properties" (Can be found on Control Panel > System and Security > System > Advanced System Settings)</li><br>
+                <ul class="list"><li>STEP 1</li></ul>
+                <ul><img src="system1.png"></ul><br>
+                <li>Click on the "Environment variables" button under the "Advanced" tab</li><br>
+                <ul class="list"><li>STEP 2</li></ul>
+                <ul><img src="system2.png"></ul><br>
+                <li>Then, select the "Path" variable in System variables and click on the "Edit" button</li><br>
+                <ul class="list"><li>STEP 3</li></ul>
+                <ul><img src="system3.png"></ul><br>
+                <li>Click on the "New" button and add the path where Java is installed, followed by \bin. By default, Java is installed in C:\Program Files\Java\jdk-20\bin (If nothing else was specified when you installed it). In that case, You will have to add a new path with: C:\Program Files\Java\jdk-20\bin Then, click "OK", and save the settings</li><br>
+                <ul class="list"><li>STEP 4</li></ul>
+                <ul><img src="system4.png"></ul><br>
+                <li>At last, open Command Prompt (cmd.exe) and type java -version to see if Java is running on your machine</li><br>
+                <ul class="list"><li>STEP 5</li></ul><br>
+                <p>Write the following in the command line (cmd.exe):</p><br>
+                <ul><img src="cmd1.png"></ul><br>
+                <p>If Java was successfully installed, you will see something like this (depending on version):</p><br>
+                <ul><img src="cmd2.png"></ul><br><br>
+              </ol>
+              <h2 id="lets-start">Lets Start</h2><br>
+              <p>In Java, every application begins with a class name, and that class must match the filename.</p><br>
+              <p>Let's create our first Java file, called Main.java, which can be done in any text editor (like Notepad,Eclipse,NetBeans,ect.).</p><br>
+              <p>The file should contain a "Hello World" message, which is written with the following code:</p><br>
+              <ul class="list"><li>Main.java</li></ul><br>
+              <ul><img src="Main.java.png"></ul><br>
+              <p>Don't worry if you don't understand the code above - we will discuss it in detail in later chapters. For now, focus on how to run the code above (in this example I'm using Eclipse).</p><br>
+              <p>Save the code (press the Ctrl+S to save the code). To run the code click the run button above or (press Ctrl+F11)</p><br>
+              <ul><img src="Main.java2.png"></ul><br>
+              <p>This will compile your code. If there are no errors in the code, and the output should read:</p><br>
+              <ul><img src="Main.java3.png"></ul><br>
+              <p>If there are errors in the code this will be the result.</p><br>
+              <ul><img src="Main.java4.png"></ul><br>
+              <ul><img src="Main.java6.png"></ul><br>
+              <ul><img src="Main.java5.png"></ul><br>
+              <h3>Example explained</h3><br>
+              <p>Every line of code that runs in Java must be inside a class. In our example, we named the class Main. A class should always start with an uppercase first letter. Java is case-sensitive: "MyClass" and "myclass" has different meaning.</p><br>
+              <p>The name of the java file must match the class name. When saving the file, save it using the class name and add ".java" to the end of the filename. To run the code like the example above, make sure that Java is properly installed: Go to the <a href="#lets-start">Let's Start</a> for how to install Java.</p><br><br>
+              <h2 id="java-syntax">Syntax</h2><br>
+              <h2>The main Method</h2><br>
+              <p>The <span style="color: red;">main()</span> method is required and you will see it in every Java program:</p><br>
+              <ul><img src="Main.java7.png"></ul><br>
+              <p>The curly braces <span style="color: red;">{}</span> marks the beginning and the end of a block of code.</p><br>
+              <p><span style="color: red;">System</span> is a built-in Java class that contains useful members, such as <span style="color: red;">out</span>, which is short for "output". The <span style="color: red;">println()</span> method, short for "print line", is used to print a value to the screen (or a file).</p><br>
+              <p>Don't worry too much about <span style="color: red;">System</span>, <span style="color: red;">out</span> and <span style="color: red;">println()</span>. Just know that you need them together to print stuff to the screen.</p><br>
+              <p>You should also note that each code statement must end with a semicolon (<span style="color: red;">;</span>).</p>
+            </div>
         </main>
         <footer>
             <div class="footer-container">

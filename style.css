@@ -10,7 +10,7 @@
     width: 100%;
     background: linear-gradient(45deg,#4287f5, #7659e6, #9c56d8, #bf52c4, #d84ead);
     background-size: 650% 650%;
-    animation: color 10s ease-in-out infinite;
+    animation: color 5s ease-in-out infinite;
 }
 
 body {

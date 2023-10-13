@@ -163,7 +163,7 @@ body {
     height: 100%;
     position: fixed;
     z-index: 1;
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding-top: 20px;
   }
   

@@ -95,7 +95,10 @@ body {
   /* Main Styles */
   
   main {
-    padding: 20px;
+    /*padding: 20px;*/
+    margin-left: 200px; 
+  font-size: 20px; 
+  padding: 0px 10px;
   }
   
   main p {
@@ -163,7 +166,9 @@ body {
     height: 100%;
     position: fixed;
     z-index: 1;
-    overflow-y: hidden;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
     padding-top: 20px;
   }
   
@@ -199,6 +204,26 @@ body {
   text-align: left;
   cursor: pointer;
   outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+    }
+
+.active {
+  background-color: green;
+  color: white;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
   p {

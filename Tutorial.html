@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>LPL Mastery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -34,7 +35,7 @@
                   <li><a href="#lets-start">Let's Start</a></li>
                   <li><a href="#java-syntax">Java Syntax</a></li>
                    <li><button class="dropdown-btn">Java Output
-                     <i class="fa fa-caret-down"></i>
+                     
                    </button></li>
                    <div class="dropdown-container">
                     <a href="#print-text">Print Text</a>
@@ -135,5 +136,20 @@
                   <p>&copy; 2023 LPL Mastery. All rights reserved.</p>
                 </div>
         </footer>
+            <script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+for (i = 0; i < dropdown.length; i++) {  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+                    
     </body>
 </html>

@@ -8,12 +8,38 @@
         #quiz {
             display: none; /* Hide the quiz initially */
             margin-top: 20px;
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         .question {
             margin-bottom: 10px;
         }
+
         .options {
             margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>

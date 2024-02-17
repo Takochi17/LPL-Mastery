@@ -1,49 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>LPL Mastery</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Service.html">Services</a></li>
-                    <li><a href="Contact.html">Contact</a></li>
-
-                </ul>
-            </nav>
-            <h1>LPL Mastery</h1>
-            <p>Your Ultimate Resource for Java Programming</p>
-        </header>
-        <main>
-            <div class="top">
-                <ul>
-                  <li><a href="Tutorial.html">Tutorial</a></li>
-                  <li><a href="Compiler.html">Compiler</a></li>
-                  <li><a href="Quiz.html">Quiz</a></li>
-                </ul>
-              </div>
-        </main>
+<head>
+    <title>LPL Mastery - Java Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        /* Additional CSS styles specific to the quiz */
+        #quiz {
+            margin-top: 20px;
         }
-        </style>
-    <h1>Java Quiz</h1>
-    <div id="quiz"></div>
+        .question {
+            margin-bottom: 10px;
+        }
+        .options {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Your header content -->
+    </header>
+    <main>
+        <!-- Your main content -->
+        <div class="top">
+            <!-- Your top navigation links -->
+        </div>
+        
+        <!-- Java Quiz Section -->
+        <h1>Java Quiz</h1>
+        <div id="quiz">
+            <!-- Quiz content will be inserted here -->
+        </div>
+    </main>
+    <footer>
+        <!-- Your footer content -->
+    </footer>
 
-        <footer>
+    <!-- JavaScript for the Quiz -->
+    <script>
+        // Define your quiz questions and answers
+        var questions = [
+            {
+                question: "What is the capital of Java?",
+                options: ["Jakarta", "Bali", "Surabaya", "Bandung"],
+                answer: "Jakarta"
+            },
+            {
+                question: "Which keyword is used to define a constant in Java?",
+                options: ["let", "final", "const", "static"],
+                answer: "final"
+            },
+            // Add more questions as needed
+        ];
 
+        // Function to display the quiz
+        function displayQuiz() {
+            var quizContainer = document.getElementById("quiz");
+            var quizHtml = "";
+            questions.forEach(function(questionObj, index) {
+                quizHtml += "<div class='question'>";
+                quizHtml += "<p>" + (index + 1) + ". " + questionObj.question + "</p>";
+                quizHtml += "<div class='options'>";
+                questionObj.options.forEach(function(option) {
+                    quizHtml += "<input type='radio' name='question" + index + "' value='" + option + "'>";
+                    quizHtml += "<label>" + option + "</label><br>";
+                });
+                quizHtml += "</div></div>";
+            });
+            quizHtml += "<button onclick='submitQuiz()'>Submit Quiz</button>";
+            quizContainer.innerHTML = quizHtml;
+        }
 
-            
-            <div class="footer-container">
-                <div class="footer-left">
-                  <p>&copy; 2023 LPL Mastery. All rights reserved.</p>
-                </div>
-        </footer>
-    </body>
+        // Function to grade the quiz
+        function submitQuiz() {
+            var score = 0;
+            questions.forEach(function(questionObj, index) {
+                var selectedOption = document.querySelector("input[name='question" + index + "']:checked");
+                if (selectedOption) {
+                    if (selectedOption.value === questionObj.answer) {
+                        score++;
+                    }
+                }
+            });
+            alert("Your score: " + score + "/" + questions.length);
+        }
+
+        // Call the displayQuiz function when the page loads
+        window.onload = displayQuiz;
+    </script>
+</body>
 </html>
+

@@ -14,9 +14,6 @@ body {
   
   }
 
-.home ul {
-  position: fixed;
-
   @keyframes color {
     0% {
       background-position: 0 50%;
@@ -168,7 +165,7 @@ body {
     width: 200px;
     background-color: #f1f1f1;
     height: 100%;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     
     overflow-x: hidden;

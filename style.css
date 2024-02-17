@@ -37,7 +37,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    position: fixed;
+    position: absolute;
     
   }
   
@@ -162,14 +162,15 @@ body {
   }
 
   .sidebar {
-    width: 200px;
-    background-color: #f1f1f1;
+    width: 0;
+    background-color: lightblue;
     height: 100%;
     position: fixed;
-    z-index: 1;
-    
+    top: 0;
+    left: 0;
+    transition: 0.5s;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 60px;
   }
   
 

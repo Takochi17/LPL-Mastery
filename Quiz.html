@@ -38,57 +38,7 @@
 
         <footer>
 
-    <script>
-        const questions = [
-            "What is the difference between JDK, JRE, and JVM?",
-            "Explain the difference between == and .equals() when comparing objects in Java.",
-            "What is the purpose of the static keyword in Java?",
-            "Describe the difference between an abstract class and an interface in Java.",
-            "What are the access modifiers in Java, and what are their respective visibility levels?",
-            "Explain the concept of inheritance in Java, and provide an example.",
-            "What is a constructor in Java, and how does it differ from a method?",
-            "What is the purpose of the final keyword in Java, and where can it be used?",
-            "Describe the difference between checked and unchecked exceptions in Java.",
-            "Explain the concept of polymorphism in Java, and provide an example."
-        ];
 
-        const answers = [
-            "JDK is a development kit, JRE is a runtime environment, and JVM is a virtual machine.",
-            "== compares object references, .equals() compares object contents.",
-            "static is used for class-level variables and methods.",
-            "Abstract class can have both abstract and concrete methods, interface only has abstract methods.",
-            "Access modifiers control the visibility of classes, methods, and variables in Java.",
-            "Inheritance allows a class to inherit fields and methods from another class.",
-            "Constructor is called when an object is instantiated, method is called to perform a task.",
-            "final keyword makes variables, methods, and classes unchangeable.",
-            "Checked exceptions are checked at compile time, unchecked exceptions are not.",
-            "Polymorphism allows objects to take multiple forms or behave differently based on their types."
-        ];
-
-        const quizContainer = document.getElementById("quiz");
-
-        questions.forEach((question, index) => {
-            const questionElement = document.createElement("div");
-            questionElement.innerHTML = <p><strong>Question ${index + 1}:</strong> ${question}</p>;
-            const answerInput = document.createElement("input");
-            answerInput.type = "text";
-            answerInput.id = answer${index};
-            questionElement.appendChild(answerInput);
-            const submitButton = document.createElement("button");
-            submitButton.textContent = "Submit";
-            submitButton.addEventListener("click", () => {
-                const userAnswer = answerInput.value.trim();
-                if (userAnswer === answers[index]) {
-                    alert("Correct!");
-                } else {
-                    alert("Wrong!");
-                }
-            });
-            questionElement.appendChild(submitButton);
-            quizContainer.appendChild(questionElement);
-        });
-    </script>
-        
             
             <div class="footer-container">
                 <div class="footer-left">

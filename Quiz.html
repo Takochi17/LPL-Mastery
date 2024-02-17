@@ -5,10 +5,23 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         /* Additional CSS styles specific to the quiz */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('background_image.jpg'); /* Replace 'background_image.jpg' with your actual image path */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff; /* Text color */
+        }
+
         #quiz {
             display: none; /* Hide the quiz initially */
             margin-top: 20px;
             animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px;
         }
 
         @keyframes fadeIn {
@@ -54,8 +67,8 @@
         </div>
         
         <!-- Java Quiz Section -->
-        <h1>Java Quiz</h1>
-        <button onclick="startQuiz()">Let's Start the Quiz</button>
+        <h1 style="text-align: center;">Java Quiz</h1>
+        <button onclick="startQuiz()" style="display: block; margin: 0 auto;">Let's Start the Quiz</button>
         <div id="quiz">
             <!-- Quiz content will be inserted here -->
         </div>
@@ -121,3 +134,5 @@
     </script>
 </body>
 </html>
+  
+    

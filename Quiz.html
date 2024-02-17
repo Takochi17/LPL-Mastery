@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LPL Mastery - Quiz Time</title>
+    <title>LPL Mastery - Java Quiz</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         /* Additional CSS styles specific to the quiz */
         #quiz {
+            display: none; /* Hide the quiz initially */
             margin-top: 20px;
         }
         .question {
@@ -28,6 +29,7 @@
         
         <!-- Java Quiz Section -->
         <h1>Java Quiz</h1>
+        <button onclick="startQuiz()">Let's Start the Quiz</button>
         <div id="quiz">
             <!-- Quiz content will be inserted here -->
         </div>
@@ -71,6 +73,12 @@
             quizContainer.innerHTML = quizHtml;
         }
 
+        // Function to start the quiz
+        function startQuiz() {
+            displayQuiz(); // Display the quiz
+            document.getElementById("quiz").style.display = "block"; // Show the quiz
+        }
+
         // Function to grade the quiz
         function submitQuiz() {
             var score = 0;
@@ -84,10 +92,6 @@
             });
             alert("Your score: " + score + "/" + questions.length);
         }
-
-        // Call the displayQuiz function when the page loads
-        window.onload = displayQuiz;
     </script>
 </body>
 </html>
-

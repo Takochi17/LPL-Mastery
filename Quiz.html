@@ -1,158 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Java Quiz</title>
-<style>
-/* CSS styles */
-.quiz-container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
+    <title>LPL Mastery - Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Additional CSS styles specific to the quiz */
+        #quiz {
+            display: none; /* Hide the quiz initially */
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+        }
 
-.question-container {
-  display: none;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-.result-container {
-  display: none;
-}
+        .question {
+            margin-bottom: 10px;
+        }
 
-.options {
-  list-style: none;
-  padding: 0;
-}
+        .options {
+            margin-bottom: 20px;
+        }
 
-.options li {
-  margin-bottom: 10px;
-}
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-.next-btn {
-  padding: 10px 20px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-</style>
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-<div class="quiz-container">
-  <div id="question-container" class="question-container">
-    <h2 id="question"></h2>
-    <ul id="options" class="options"></ul>
-  </div>
-  <div id="result-container" class="result-container">
-    <p id="result"></p>
-    <button id="next-btn" class="next-btn">Next Question</button>
-  </div>
-</div>
-<script>
-// JavaScript code
-const quizData = [
-  {
-    question: "When was the Java language invented?",
-    options: ["1991", "1999", "1995", "2005"],
-    answer: "1991"
-  },
-  {
-    question: "Who Created Java Language?",
-    options: ["Dmitri Mendeleev", "Henry Wyn-Jeffry", "James Gosling", "Leonardo Di Caprio"],
-    answer: "James Gosling"
-  },
-  {
-    question: "Java Programs are?",
-    options: ["Faster than others ", "Platforms Independent ", "Not scalable  ", "Not Reusable "],
-    answer: "Platforms Independent "
-  },
-  {
-    question: "Which statement is true about Java?",
-    options: ["Java is a sequence-dependent programming language ", "Java is a code dependent programming language ", "Java is a platform-dependent programming language ", "Java is a platform-independent programming language  "],
-    answer: "Java is a platform-independent programming language  "
-  },
-  {
-    question: "Which component is used to compile, debug and execute the java programs?",
-    options: ["JRE", "JIT", "JDK", "JVM"],
-    answer: "JDK "
-  },
-  {
-    question: "Which one of the following is not a Java feature?",
-    options: ["Object-oriented ", "Use of pointers", "Portable ", "Dynamic and Extensible"],
-    answer: "Use of pointers "
-  },
-  {
-    question: "Which of the following is not an OOPS concept in Java?",
-    options: ["Polymorphism ", "Inheritance ", "Compilation ", "Encapsulation "],
-    answer: "Compilation "
-  },
-  {
-    question: "What is the extension of compiled java classes?",
-    options: [".txt", ".js ", ".class", ".java"],
-    answer: ".class"
-  },
-  {
-    question: "Which of these keywords is used to define interfaces in Java?",
-    options: ["Int ", "Intf", "interface ", "Innerface"],
-    answer: "interface "
-  },
-  {
-    question: "Which of these are selection statements in Java?",
-    options: ["break", "continue", "for()", "if()"],
-    answer: "if()"
-  }
-];
+    <header>
+        <!-- Your header content -->
+    </header>
+    <main>
+        <!-- Your main content -->
+        <div class="top">
+            <!-- Your top navigation links -->
+        </div>
+        
+        <!-- Java Quiz Section -->
+        <h1>Java Quiz</h1>
+        <button onclick="startQuiz()">Let's Start the Quiz</button>
+        <div id="quiz">
+            <!-- Quiz content will be inserted here -->
+        </div>
+    </main>
+    <footer>
+        <!-- Your footer content -->
+    </footer>
 
-const questionContainer = document.getElementById('question-container');
-const resultContainer = document.getElementById('result-container');
-const questionElement = document.getElementById('question');
-const optionsElement = document.getElementById('options');
-const resultElement = document.getElementById('result');
-const nextButton = document.getElementById('next-btn');
+    <!-- JavaScript for the Quiz -->
+    <script>
+        // Define your quiz questions and answers
+        var questions = [
+            {
+                question: "when did java Language invented?",
+                options: ["1991", "1999", "1995", "2005"],
+                answer:"1991"
+            },
+            {
+                question: "Who Created Java Language?",
+                options: ["Dmitri Mendeleev ", "Henry Wyn-Jeffry ", "James Gosling ", "Leonardo Di Caprio "],
+                answer: "James Gosling "
+            },
+            // Add more questions as needed
+        ];
 
-let currentQuestionIndex = 0;
-let score = 0;
+        // Function to display the quiz
+        function displayQuiz() {
+            var quizContainer = document.getElementById("quiz");
+            var quizHtml = "";
+            questions.forEach(function(questionObj, index) {
+                quizHtml += "<div class='question'>";
+                quizHtml += "<p>" + (index + 1) + ". " + questionObj.question + "</p>";
+                quizHtml += "<div class='options'>";
+                questionObj.options.forEach(function(option) {
+                    quizHtml += "<input type='radio' name='question" + index + "' value='" + option + "'>";
+                    quizHtml += "<label>" + option + "</label><br>";
+                });
+                quizHtml += "</div></div>";
+            });
+            quizHtml += "<button onclick='submitQuiz()'>Submit Quiz</button>";
+            quizContainer.innerHTML = quizHtml;
+        }
 
-// Function to load question
-function loadQuestion() {
-  const currentQuestion = quizData[currentQuestionIndex];
-  questionElement.innerText = currentQuestion.question;
-  optionsElement.innerHTML = '';
-  currentQuestion.options.forEach(option => {
-    const li = document.createElement('li');
-    li.innerText = option;
-    li.addEventListener('click', () => {
-      if (option === currentQuestion.answer) {
-        score++;
-      }
-      nextQuestion();
-    });
-    optionsElement.appendChild(li);
-  });
-}
+        // Function to start the quiz
+        function startQuiz() {
+            displayQuiz(); // Display the quiz
+            document.getElementById("quiz").style.display = "block"; // Show the quiz
+        }
 
-// Function to show result
-function showResult() {
-  questionContainer.style.display = 'none';
-  resultContainer.style.display = 'block';
-  resultElement.innerText = `Your Score: ${score} out of ${quizData.length}`;
-}
-
-// Function to load next question or show result
-function nextQuestion() {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < quizData.length) {
-    loadQuestion();
-  } else {
-    showResult();
-  }
-}
-
-// Event listener for next button
-nextButton.addEventListener('click', nextQuestion);
-
-// Initial loading of first question
-loadQuestion();
-</script>
+        // Function to grade the quiz
+        function submitQuiz() {
+            var score = 0;
+            questions.forEach(function(questionObj, index) {
+                var selectedOption = document.querySelector("input[name='question" + index + "']:checked");
+                if (selectedOption) {
+                    if (selectedOption.value === questionObj.answer) {
+                        score++;
+                    }
+                }
+            });
+            alert("Your score: " + score + "/" + questions.length);
+        }
+    </script>
 </body>
 </html>
-

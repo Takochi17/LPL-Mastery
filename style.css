@@ -4,15 +4,31 @@
   box-sizing: border-box;
 }
 
+:root {
+    --background-light: #ffffff;
+    --text-light: #333333;
+    --background-dark: #333333;
+    --text-dark: #ffffff;
+}
 
 /* Global Styles */
 body {
+
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s;
+  
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-image: url('background.jpg'); /* replace 'background.jpg' with your image path */
     background-size: cover;
     background-position: center;
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
 
 /* Header Styles */

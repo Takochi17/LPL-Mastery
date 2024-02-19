@@ -5,8 +5,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         /* Additional CSS styles specific to the quiz */
-        #quiz {
-            display: none; /* Hide the quiz initially */
+        #quiz, #additionalQuiz {
+            display: none; /* Hide the quizzes initially */
             margin-top: 20px;
             animation: fadeIn 1s ease-in-out; /* Fade-in animation */
         }
@@ -55,68 +55,128 @@
         
         <!-- Java Quiz Section -->
         <h1>Java Quiz</h1>
-        <button onclick="startQuiz()">Let's Start the Quiz</button>
-        <div id="quiz">
-            <!-- Quiz content will be inserted here -->
+        <button onclick="startJavaQuiz()">Let's Start the Java Quiz</button>
+        <div id="javaQuiz">
+            <!-- Java Quiz content will be inserted here -->
+        </div>
+
+        <!-- Additional Quiz Section -->
+        <h1>Additional Quiz</h1>
+        <button onclick="startAdditionalQuiz()">Let's Start the Additional Quiz</button>
+        <div id="additionalQuiz">
+            <!-- Additional Quiz content will be inserted here -->
         </div>
     </main>
     <footer>
         <!-- Your footer content -->
     </footer>
 
-    <!-- JavaScript for the Quiz -->
+    <!-- JavaScript for the Quizzes -->
     <script>
-        // Define your quiz questions and answers
-        var questions = [
+        // Define your Java quiz questions and answers
+        var javaQuestions = [
             {
-                question: "when did java Language invented?",
+                question: "When was the Java language invented?",
                 options: ["1991", "1999", "1995", "2005"],
-                answer:"1991"
+                answer: "1991"
             },
             {
                 question: "Who Created Java Language?",
-                options: ["Dmitri Mendeleev ", "Henry Wyn-Jeffry ", "James Gosling ", "Leonardo Di Caprio "],
-                answer: "James Gosling "
+                options: ["Dmitri Mendeleev", "Henry Wyn-Jeffry", "James Gosling", "Leonardo Di Caprio"],
+                answer: "James Gosling"
             },
-            // Add more questions as needed
+            // Add more Java questions as needed
         ];
 
-        // Function to display the quiz
-        function displayQuiz() {
-            var quizContainer = document.getElementById("quiz");
-            var quizHtml = "";
-            questions.forEach(function(questionObj, index) {
-                quizHtml += "<div class='question'>";
-                quizHtml += "<p>" + (index + 1) + ". " + questionObj.question + "</p>";
-                quizHtml += "<div class='options'>";
+        // Define your additional quiz questions and answers
+        var additionalQuestions = [
+            {
+                question: "Java Programs are?",
+                options: ["Faster than others", "Platforms Independent", "Not scalable", "Not Reusable"],
+                answer: "Platforms Independent"
+            },
+            {
+                question: "Which statement is true about Java?",
+                options: ["Java is a sequence-dependent programming language", "Java is a code dependent programming language", "Java is a platform-dependent programming language", "Java is a platform-independent programming language"],
+                answer: "Java is a platform-independent programming language"
+            },
+            // Add more additional questions as needed
+        ];
+
+        // Function to display the Java quiz
+        function displayJavaQuiz() {
+            var javaQuizContainer = document.getElementById("javaQuiz");
+            var javaQuizHtml = "";
+            javaQuestions.forEach(function(questionObj, index) {
+                javaQuizHtml += "<div class='question'>";
+                javaQuizHtml += "<p>" + (index + 1) + ". " + questionObj.question + "</p>";
+                javaQuizHtml += "<div class='options'>";
                 questionObj.options.forEach(function(option) {
-                    quizHtml += "<input type='radio' name='question" + index + "' value='" + option + "'>";
-                    quizHtml += "<label>" + option + "</label><br>";
+                    javaQuizHtml += "<input type='radio' name='javaQuestion" + index + "' value='" + option + "'>";
+                    javaQuizHtml += "<label>" + option + "</label><br>";
                 });
-                quizHtml += "</div></div>";
+                javaQuizHtml += "</div></div>";
             });
-            quizHtml += "<button onclick='submitQuiz()'>Submit Quiz</button>";
-            quizContainer.innerHTML = quizHtml;
+            javaQuizHtml += "<button onclick='submitJavaQuiz()'>Submit Java Quiz</button>";
+            javaQuizContainer.innerHTML = javaQuizHtml;
         }
 
-        // Function to start the quiz
-        function startQuiz() {
-            displayQuiz(); // Display the quiz
-            document.getElementById("quiz").style.display = "block"; // Show the quiz
+        // Function to start the Java quiz
+        function startJavaQuiz() {
+            displayJavaQuiz(); // Display the Java quiz
+            document.getElementById("javaQuiz").style.display = "block"; // Show the Java quiz
         }
 
-        // Function to grade the quiz
-        function submitQuiz() {
+        // Function to grade the Java quiz
+        function submitJavaQuiz() {
             var score = 0;
-            questions.forEach(function(questionObj, index) {
-                var selectedOption = document.querySelector("input[name='question" + index + "']:checked");
+            javaQuestions.forEach(function(questionObj, index) {
+                var selectedOption = document.querySelector("input[name='javaQuestion" + index + "']:checked");
                 if (selectedOption) {
                     if (selectedOption.value === questionObj.answer) {
                         score++;
                     }
                 }
             });
-            alert("Your score: " + score + "/" + questions.length);
+            alert("Your score for the Java quiz: " + score + "/" + javaQuestions.length);
+        }
+
+        // Function to display the additional quiz
+        function displayAdditionalQuiz() {
+            var additionalQuizContainer = document.getElementById("additionalQuiz");
+            var additionalQuizHtml = "";
+            additionalQuestions.forEach(function(questionObj, index) {
+                additionalQuizHtml += "<div class='question'>";
+                additionalQuizHtml += "<p>" + (index + 1) + ". " + questionObj.question + "</p>";
+                additionalQuizHtml += "<div class='options'>";
+                questionObj.options.forEach(function(option) {
+                    additionalQuizHtml += "<input type='radio' name='additionalQuestion" + index + "' value='" + option + "'>";
+                    additionalQuizHtml += "<label>" + option + "</label><br>";
+                });
+                additionalQuizHtml += "</div></div>";
+            });
+            additionalQuizHtml += "<button onclick='submitAdditionalQuiz()'>Submit Additional Quiz</button>";
+            additionalQuizContainer.innerHTML = additionalQuizHtml;
+        }
+
+        // Function to start the additional quiz
+        function startAdditionalQuiz() {
+            displayAdditionalQuiz(); // Display the additional quiz
+            document.getElementById("additionalQuiz").style.display = "block"; // Show the additional quiz
+        }
+
+        // Function to grade the additional quiz
+        function submitAdditionalQuiz() {
+            var score = 0;
+            additionalQuestions.forEach(function(questionObj, index) {
+                var selectedOption = document.querySelector("input[name='additionalQuestion" + index + "']:checked");
+                if (selectedOption) {
+                    if (selectedOption.value === questionObj.answer) {
+                        score++;
+                    }
+                }
+            });
+            alert("Your score for the additional quiz: " + score + "/" + additionalQuestions.length);
         }
     </script>
 </body>

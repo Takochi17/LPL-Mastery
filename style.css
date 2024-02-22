@@ -16,6 +16,14 @@ body {
     background-position: center;
 }
 
+.lock-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 50%;
+      position: relative;
+}
 
 /* Header Styles */
 header {

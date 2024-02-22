@@ -116,6 +116,7 @@ footer {
   }
   
   header h1 {
+    font-color: cyan;
     margin: 0;
   }
   
@@ -233,6 +234,7 @@ footer {
   }
 
   p {
+    font-color: lightblue;
     font-weight: bold;
   }
 

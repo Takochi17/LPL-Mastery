@@ -13,7 +13,7 @@
 
 /* Global Styles */
 body {
-
+    Background-color: #0c192c
     background-color: var(--background-light);
     color: var(--text-light);
     transition: background-color 0.3s, color 0.3s;

@@ -4,20 +4,10 @@
   box-sizing: border-box;
 }
 
-:root {
-    --background-light: #ffffff;
-    --text-light: #333333;
-    --background-dark: #333333;
-    --text-dark: #ffffff;
-}
 
 /* Global Styles */
 body {
-    Background-color: #0c192c
-    background-color: var(--background-light);
-    color: var(--text-light);
-    transition: background-color 0.3s, color 0.3s;
-  
+    Background-color: #0c192c;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -26,10 +16,6 @@ body {
     background-position: center;
 }
 
-body.dark-mode {
-    background-color: var(--background-dark);
-    color: var(--text-dark);
-}
 
 /* Header Styles */
 header {

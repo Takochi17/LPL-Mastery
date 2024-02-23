@@ -7,7 +7,8 @@
 
 /* Global Styles */
 body {
-    Background-color: #0c192c;
+    font-color: #0c192c;
+    Background-color: lightblue;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -124,7 +125,6 @@ footer {
   }
   
   header h1 {
-    font-color: cyan;
     margin: 0;
   }
   
@@ -242,7 +242,6 @@ footer {
   }
 
   p {
-    font-color: lightblue;
     font-weight: bold;
   }
 

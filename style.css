@@ -12,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('Main.Java.png'); /* replace 'background.jpg' with your image path */
+    background-image: url('Main.java.png'); /* replace 'background.jpg' with your image path */
     background-size: cover;
     background-position: center;
 }
